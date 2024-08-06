@@ -26,7 +26,6 @@ export default function Home() {
     const rUseCase = usecase?.toString().split(",");
     await fetch(`/api/add`, {
       method: "POST",
-      headers: { "content-type": "application/json" },
       body: JSON.stringify({
         question,
         answer,
