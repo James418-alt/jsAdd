@@ -38,3 +38,21 @@ export const POST = async (req: NextRequest) => {
     });
   }
 };
+
+export const GET = async () => {
+  try {
+    await dbConfig();
+    const getD = await myQModel.find();
+    return NextResponse.json({
+      message: "All Q and A",
+      data: getD,
+      status: 200,
+    });
+  } catch (error: any) {
+    return NextResponse.json({
+      message: "Error Occured",
+      status: 400,
+      error: error.message,
+    });
+  }
+};
