@@ -39,6 +39,7 @@ export default function Home() {
       }),
     }).then(() => {
       setLoading(false);
+      window.location.reload();
     });
   };
   return (
